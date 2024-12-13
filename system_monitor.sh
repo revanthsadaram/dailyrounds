@@ -46,8 +46,8 @@ check_required_commands() {
 
 # Validate OS compatibility
 check_os() {
-    SUPPORTED_OS=("Linux" "RHEL" "CentOS" "CentOS Linux")
-    OS_NAME=$(cat /etc/os-release | grep -E '^NAME=' | awk -F= '{print $2}' | tr -d '"')
+    SUPPORTED_OS=("Linux")
+    OS_NAME=$(uname)
 
     if [[ ! " ${SUPPORTED_OS[*]} " =~ " $OS_NAME " ]]; then
         echo "Error: Unsupported operating system '$OS_NAME'. This script supports only Linux, RHEL, and CentOS."
@@ -86,7 +86,7 @@ check_alerts() {
 
     while IFS= read -r line; do
         local USAGE=$(echo "$line" | awk -F',' '{print $5}' | tr -d '%')
-        if (( USAGE > 30 )); then
+        if (( USAGE > 90 )); then
             echo "Warning: Disk space usage exceeded 90%! Line: $line"
         fi
     done <<< "$DISK"
