@@ -14,7 +14,7 @@ Handles logging and archival of old reports.
 
 **Requirements**
 
-Currently the scrpit supported OS are Linux, RHEL, CentOS.
+Currently the scrpit supported OS are Linux.
 
 Make Sure below commands are installed and accessible to the user.
 
