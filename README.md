@@ -1,5 +1,3 @@
-# dailyrounds
-
 **System Performance Monitoring Script**
 
 The script collects and generates report system performance data such as CPU usage, memory usage, disk usage, and top CPU-consuming processes. The output can be generated in text, JSON, or CSV formats. 
